@@ -16,6 +16,7 @@ const incl_symbol = document.querySelector("#incl_symbol");
 
 var count = 16;
 var password = '';
+var currSelectedOne = null;
 
 const keyToPass = {
     0: 'lowercase',
@@ -23,6 +24,14 @@ const keyToPass = {
     2: 'number',
     3: 'symbol'
 }
+
+const passKeys = {
+    lowercase: 'qwertyuioplkjhgfdsazxcvbnm',
+    uppercase: 'QWERTYUIOPLKJHGFDSAZXCVBNM',
+    number: '0147896325',
+    // symbol: '~`!@#$%^&*()_-+=|[]{}":;?<>.,'
+    symbol: '~`!@#$%^&*()_-+={[}]|\:;\"\'<,>.?/'
+};
 
 refresh_btn.addEventListener('click', genPassword);
 copy_btn.addEventListener('click', copyToClipboard);
@@ -34,16 +43,9 @@ copy_btn.addEventListener('click', copyToClipboard);
 // });
 
 
-const passKeys = {
-    lowercase: 'qwertyuioplkjhgfdsazxcvbnm',
-    uppercase: 'QWERTYUIOPLKJHGFDSAZXCVBNM',
-    number: '0147896325',
-    symbol: '~`!@#$%^&*()_-+=|[]{}":;?<>.,'
-};
-
 function copyToClipboard() {
     const el = document.createElement('textarea');
-    el.value = password;
+    el.value = op_bar.value;
     document.body.appendChild(el);
 
     try {
@@ -60,7 +62,19 @@ function copyToClipboard() {
 function updateslider() {
     count = slider.value;
     slider_span.innerHTML = count;
-    console.log(count);
+
+    genPassword();
+    // console.log(count);
+}
+
+function incrementSlider() {
+    slider.value++;
+    updateslider();
+}
+
+function decrementSlider() {
+    slider.value--;
+    updateslider();
 }
 
 function getPassKeysInt(a, b, c, d) {
@@ -89,15 +103,44 @@ function getPassKeysInt(a, b, c, d) {
     return randNum;
 }
 
+function manageSelectOptions(totalSum) {
+    if (totalSum == 1) {
+        if (incl_upper.checked == true) {
+            currSelectedOne = incl_upper;
+            incl_upper.disabled = true;
+        } else if (incl_lower.checked == true) {
+            currSelectedOne = incl_lower;
+            incl_lower.disabled = true;
+
+        } else if (incl_num.checked == true) {
+            currSelectedOne = incl_num;
+            incl_num.disabled = true;
+
+        } else if (incl_symbol.checked == true) {
+            currSelectedOne = incl_symbol;
+            incl_symbol.disabled = true;
+        }
+
+        // genPassword();
+    } else if (totalSum > 1) {
+        if (currSelectedOne !== null) {
+            currSelectedOne.disabled = false;
+            currSelectedOne = null;
+        }
+    }
+}
+
 function genPassword() {
-    updateslider();
+    // updateslider();
 
     password = '';
     var _count = count;
+    var totalSum = incl_upper.checked + incl_lower.checked
+        + incl_num.checked + incl_symbol.checked + 0;
+    manageSelectOptions(totalSum);
 
     while (_count != 0) {
-        var totalSum = incl_upper.checked + incl_lower.checked
-            + incl_num.checked + incl_symbol.checked + 0;
+
         if (totalSum == 0) {
             console.log("Select Min One");
             alert("Select Min One");

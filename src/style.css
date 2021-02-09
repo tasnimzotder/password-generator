@@ -12,6 +12,7 @@
   margin: 0;
   -webkit-tap-highlight-color: transparent;
   outline: none;
+  user-select: none;
 }
 
 *:focus {
@@ -140,12 +141,13 @@ body {
 
 .slider {
   -webkit-appearance: none;
-  width: 92%;
+  width: 84%;
   cursor: pointer;
   border-radius: 6px;
   background-color: rgb(255, 131, 131);
   height: 4px;
   padding: 0;
+  margin: 0 13px;
 }
 
 .slider::-webkit-slider-thumb {
@@ -153,12 +155,31 @@ body {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.999);
   transition: all 0.3s ease-in-out;
 }
 
 .slider:hover {
   transform: scale(1.01);
+}
+
+.val_changer {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: rgba(47, 50, 82, 0.486);
+  width: 20px;
+  text-align: center;
+  border-radius: 2px;
+  user-select: none;
+}
+
+.val_changer:hover {
+  transform: scale(1.1);
+  background-color: rgba(56, 59, 90, 0.781);
+}
+
+.val_changer:active {
+  background-color: rgb(37, 146, 111);
 }
 
 /* Settings Switches */
@@ -245,13 +266,14 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   padding-top: 12px;
+  padding: 10px 30px 6px 30px;
 }
 
 .ghub_logo a img {
   height: 32px;
-  padding-left: 24px;
+  /* padding-left: 24px; */
 }
 
 /* Close it btn */
