@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <script defer src="close_win.js"></script>
+  </head>
+  <body>
+    <div class="div-1">
+      <div class="div-hdr">
+        <span>Password Generator</span>
+      </div>
+
+      <div class="div-bdy">
+        <!-- Output -->
+        <div class="div-gentr">
+          <input id="op_bar" type="text" />
+          <div class="div-refresh-cpy">
+            <button id="refresh_btn" class="ctrl_btn">
+              <span>Refresh</span>
+              <img src="assets/refresh.svg" alt="refresh" />
+            </button>
+            <button class="copy_btn ctrl_btn">
+              <span>Copy</span>
+              <img alt="copy" src="assets/copy.svg" />
+            </button>
+          </div>
+        </div>
+
+        <!-- Settings -->
+        <div class="slider-div">
+          <span>Length: <span id="slider_span">16</span></span>
+          <div class="slider-range">
+            <input
+              id="slider"
+              class="slider"
+              type="range"
+              name="slider"
+              min="1"
+              max="64"
+              value="16"
+              onchange="updateslider(), genPassword()"
+            />
+          </div>
+        </div>
+        <!-- Settings Switches -->
+        <div class="settings">
+          <div class="st-upper st-div">
+            <span>Include Uppercase</span>
+            <div class="onoffswitch">
+              <input
+                type="checkbox"
+                name="onoffswitch"
+                class="checkbox"
+                id="incl_upper"
+                tabindex="0"
+                onchange="genPassword()"
+                checked
+              />
+              <label class="switch-label" for="incl_upper"></label>
+            </div>
+          </div>
+
+          <div class="st-lower st-div">
+            <span>Include Lowercase</span>
+            <div class="onoffswitch">
+              <input
+                type="checkbox"
+                name="onoffswitch"
+                class="checkbox"
+                id="incl_lower"
+                tabindex="0"
+                onchange="genPassword()"
+                checked
+              />
+              <label class="switch-label" for="incl_lower"></label>
+            </div>
+          </div>
+
+          <div class="st-num st-div">
+            <span>Include Numbers</span>
+            <div class="onoffswitch">
+              <input
+                type="checkbox"
+                name="onoffswitch"
+                class="checkbox"
+                id="incl_num"
+                tabindex="0"
+                onchange="genPassword()"
+                checked
+              />
+              <label class="switch-label" for="incl_num"></label>
+            </div>
+          </div>
+
+          <div class="st-symbol st-div">
+            <span>Include Symbols</span>
+            <div class="onoffswitch">
+              <input
+                type="checkbox"
+                name="onoffswitch"
+                class="checkbox"
+                id="incl_symbol"
+                tabindex="0"
+                onchange="genPassword()"
+                checked
+              />
+              <label class="switch-label" for="incl_symbol"></label>
+            </div>
+          </div>
+        </div>
+        <!-- End: Settings -->
+      </div>
+
+      <!-- Close it btn -->
+
+      <!-- For later -->
+      <!-- <button class="close_btn">X</button>  -->
+
+      <div class="footer">
+        <div class="copyright">
+          <span>Tasnim Zotder |</span>
+          <span>2021</span>
+        </div>
+        <div class="ghub_logo">
+          <a href="https://github.com/tasnimzotder">
+            <img src="assets/github.png" alt="github" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

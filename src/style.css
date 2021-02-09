@@ -1,0 +1,280 @@
+@font-face {
+  font-family: 'Gruppo';
+  src: url(fonts/Gruppo/Gruppo-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  src: url(fonts/Alegreya_Sans_SC/AlegreyaSansSC-Light.ttf);
+}
+
+* {
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+body {
+  padding: 0;
+  background-color: rgb(7, 11, 41);
+  font-family: 'Gruppo';
+}
+
+.div-1 {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding-top: 10px;
+}
+
+.div-hdr {
+  font-size: 24px;
+  padding-left: 20px;
+  font-family: 'Gruppo';
+  text-align: left;
+}
+
+.div-bdy {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+  margin: 0 20px 0 20px;
+  padding-top: 20px;
+}
+
+/* Output Display */
+
+.div-gentr {
+  padding-bottom: 25px;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.div-gentr input {
+  background-color: rgba(58, 65, 129, 0.75);
+  border: 0;
+  border-radius: 2px;
+  height: 32px;
+  color: white;
+  padding: 6px 10px;
+  font-size: 17px;
+  word-wrap: none;
+  text-align: center;
+}
+
+.div-gentr input:focus {
+  outline: none;
+}
+
+.div-refresh-cpy {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0;
+}
+
+.div-refresh-cpy button {
+  background-color: rgb(47, 50, 82);
+  color: white;
+  border: 0;
+  width: 128px;
+  height: 32px;
+  margin: 0 5px;
+  font-family: 'Alegreya Sans SC';
+  font-size: 16px;
+}
+
+.div-refresh-cpy button:active {
+  background-color: rgb(241, 156, 116);
+  color: rgb(47, 50, 82);
+  font-weight: 700;
+}
+
+/* Copy Btn */
+
+.ctrl_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ctrl_btn img {
+  height: 66%;
+  padding-left: 5px;
+}
+
+/* End: Output Display */
+
+/* Settings */
+
+.slider-div {
+  /* background-color: rgb(75, 75, 8); */
+  padding: 0 0 20px 0;
+}
+
+.slider-div span {
+  /* color: red; */
+  font-family: 'Alegreya Sans SC';
+}
+
+.slider-range {
+  margin-top: 4px;
+  width: 100%;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 92%;
+  cursor: pointer;
+  border-radius: 6px;
+  background-color: rgb(255, 131, 131);
+  height: 4px;
+  padding: 0;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.75);
+  transition: all 0.3s ease-in-out;
+}
+
+.slider:hover {
+  transform: scale(1.01);
+}
+
+/* Settings Switches */
+
+.settings {
+  display: flex;
+  flex-direction: column;
+}
+
+.st-div {
+  background-color: rgb(47, 50, 82);
+  margin: 3px 0;
+  height: 40px;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px 0 10px;
+}
+
+/* Switch Button */
+
+.onoffswitch {
+  position: relative;
+  width: 48px;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.switch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  height: 24px;
+  padding: 0;
+  line-height: 24px;
+  border: 2px solid #ff0000;
+  border-radius: 36px;
+  background-color: #ff0000;
+  transition: background-color 0.3s ease-in;
+}
+
+.switch-label:before {
+  content: '';
+  display: block;
+  width: 24px;
+  margin: 0px;
+  background: #ffffff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 22px;
+  border: 2px solid #e3e3e3;
+  border-radius: 24px;
+  transition: all 0.2s ease-in 0s;
+}
+
+.checkbox:checked + .switch-label {
+  background-color: #25926f;
+}
+
+.checkbox:checked + .switch-label,
+.checkbox:checked + .switch-label:before {
+  border-color: #25926f;
+}
+
+.checkbox:checked + .switch-label:before {
+  right: 0px;
+}
+
+/* End: Settings */
+
+/* Footer */
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 12px;
+}
+
+.ghub_logo a img {
+  height: 32px;
+  padding-left: 24px;
+}
+
+/* Close it btn */
+.close_btn {
+  height: 32px;
+  width: 32px;
+  background-color: rgb(196, 1, 1);
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+  border-radius: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: white;
+}
+
+.close_btn:hover {
+  background-color: rgb(104, 1, 1);
+  cursor: pointer;
+}
+
+/* End: Close it btn */
