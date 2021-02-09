@@ -10,7 +10,7 @@
     <script defer src="script.js"></script>
     <script defer src="close_win.js"></script>
   </head>
-  <body>
+  <body onload="genPassword()">
     <div class="div-1">
       <div class="div-hdr">
         <span>Password Generator</span>
@@ -36,6 +36,7 @@
         <div class="slider-div">
           <span>Length: <span id="slider_span">16</span></span>
           <div class="slider-range">
+            <span class="val_changer" onclick="decrementSlider()">〈</span>
             <input
               id="slider"
               class="slider"
@@ -44,8 +45,9 @@
               min="1"
               max="64"
               value="16"
-              onchange="updateslider(), genPassword()"
+              onchange="updateslider()"
             />
+            <span class="val_changer" onclick="incrementSlider()">〉</span>
           </div>
         </div>
         <!-- Settings Switches -->
@@ -131,6 +133,9 @@
           <a href="https://github.com/tasnimzotder/password-generator">
             <img src="assets/github.png" alt="github" />
           </a>
+        </div>
+        <div class="version">
+          <span>v1.0.1</span>
         </div>
       </div>
     </div>
