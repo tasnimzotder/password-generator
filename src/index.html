@@ -10,7 +10,7 @@
     <script defer src="script.js"></script>
     <script defer src="close_win.js"></script>
   </head>
-  <body onload="genPassword()">
+  <body onload="generatePassword()">
     <div class="div-1">
       <div class="div-hdr">
         <span>Password Generator</span>
@@ -30,6 +30,21 @@
               <img alt="copy" src="assets/copy.svg" />
             </button>
           </div>
+        </div>
+
+        <!-- Mode selector -->
+        <div class="mode_selector_div">
+          <span class="mode_sel_span">Memorizable</span>
+          <label class="mode_selector">
+            <input
+              class="mode_selector_input"
+              type="checkbox"
+              onchange="generatePassword()"
+              checked
+            />
+            <span class="mode_selector_slider"></span>
+          </label>
+          <span class="mode_sel_span">Complex</span>
         </div>
 
         <!-- Settings -->
@@ -61,7 +76,7 @@
                 class="checkbox"
                 id="incl_upper"
                 tabindex="0"
-                onchange="genPassword()"
+                onchange="generatePassword()"
                 checked
               />
               <label class="switch-label" for="incl_upper"></label>
@@ -77,7 +92,7 @@
                 class="checkbox"
                 id="incl_lower"
                 tabindex="0"
-                onchange="genPassword()"
+                onchange="generatePassword()"
                 checked
               />
               <label class="switch-label" for="incl_lower"></label>
@@ -93,7 +108,7 @@
                 class="checkbox"
                 id="incl_num"
                 tabindex="0"
-                onchange="genPassword()"
+                onchange="generatePassword()"
                 checked
               />
               <label class="switch-label" for="incl_num"></label>
@@ -109,7 +124,7 @@
                 class="checkbox"
                 id="incl_symbol"
                 tabindex="0"
-                onchange="genPassword()"
+                onchange="generatePassword()"
                 checked
               />
               <label class="switch-label" for="incl_symbol"></label>
