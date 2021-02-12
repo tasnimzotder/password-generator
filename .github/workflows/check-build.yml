@@ -1,0 +1,10 @@
+name: check-build
+on: [push]
+jobs:
+  check-build:
+   runs-on: windows-latest
+   steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: npm install
+      - run: npm run make

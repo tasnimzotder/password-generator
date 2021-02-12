@@ -41,18 +41,18 @@ const passKeys = {
 // ToDo: Make a complete wordlist
 const wordList = {
     1: ['a', 'b'],
-    2: ['an', 'is', 'an', 'on', 'it', 'me', 'he'],
+    2: ['an', 'is', 'on', 'it', 'me', 'he'],
     3: ['one', 'two', 'six', 'ten', 'she', 'fix'],
     4: ['zero', 'four', 'five', 'nine'],
     5: ['three', 'seven', 'eight'],
-    99: ['$', '%', '*', '@'],
-    999: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    99: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+    999: ['$', '%', '*', '@']
 }
 
 function generatePassword() {
     if (mode_select.checked == true) {
-        generatePassComplex();
         toggleSwitches(0);
+        generatePassComplex();
     } else {
         toggleSwitches(1);
         generatePassMemorizable();
