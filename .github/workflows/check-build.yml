@@ -1,9 +1,16 @@
 name: check-build
-on: [push]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 jobs:
   check-build:
-   runs-on: windows-latest
-   steps:
+    runs-on: windows-latest
+    steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
       - run: npm install
