@@ -80,7 +80,7 @@ function toggleSwitches(state) {
             switch_label[i].style.opacity = 1;
         }
 
-        currSelectedOne.disabled = true;
+        // currSelectedOne.disabled = true;
         switch_label[currSelectedOneNum].style.opacity = 0.3;
     }
 }
@@ -173,7 +173,6 @@ function copyToClipboard() {
         el.select();
         document.execCommand('copy');
         document.body.removeChild(el);
-        // alert("Copied: " + el.value);
     } catch (error) {
         console.log(error);
     }
@@ -274,8 +273,8 @@ function generatePassComplex() {
             break;
         }
 
-        var _keyToPassIdx = getPassKeysInt(incl_upper.checked,
-            incl_lower.checked, incl_num.checked, incl_symbol.checked);
+        var _keyToPassIdx = getPassKeysInt(incl_lower.checked,
+            incl_upper.checked, incl_num.checked, incl_symbol.checked);
         // console.log(_keyToPassIdx);
         var _keyToPass = keyToPass[_keyToPassIdx];
         var _passKeys = passKeys[_keyToPass];
