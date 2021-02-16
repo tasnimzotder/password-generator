@@ -1,4 +1,5 @@
 // const remote = require('electron').remote;
+const words = require("./words");
 
 const op_bar = document.querySelector("#op_bar");
 const refresh_btn = document.querySelector("#refresh_btn");
@@ -38,16 +39,7 @@ const passKeys = {
     symbol: '~`!@#$%^&*()_-+={[}]|\:;\"\'<,>.?/'
 };
 
-// ToDo: Make a complete wordlist
-const wordList = {
-    1: ['a', 'b'],
-    2: ['an', 'is', 'on', 'it', 'me', 'he'],
-    3: ['one', 'two', 'six', 'ten', 'she', 'fix'],
-    4: ['zero', 'four', 'five', 'nine'],
-    5: ['three', 'seven', 'eight'],
-    99: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-    999: ['$', '%', '*', '@']
-}
+const wordList = words;
 
 function generatePassword() {
     if (mode_select.checked == true) {
