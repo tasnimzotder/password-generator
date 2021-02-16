@@ -1,4 +1,4 @@
-// const remote = require('electron').remote;
+const shell = require('electron').shell;
 const words = require("./words");
 
 const op_bar = document.querySelector("#op_bar");
@@ -279,7 +279,9 @@ function generatePassComplex() {
         _count--;
     }
 
-    // console.log(password);
     op_bar.value = password;
-    // console.log(incl_upper.checked);
+}
+
+const openLinkInBrowser = (link) => {
+    shell.openExternal(link);
 }
