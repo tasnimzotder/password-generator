@@ -1,4 +1,5 @@
-// const remote = require('electron').remote;
+const shell = require('electron').shell;
+const words = require("./words");
 
 const op_bar = document.querySelector("#op_bar");
 const refresh_btn = document.querySelector("#refresh_btn");
@@ -38,16 +39,7 @@ const passKeys = {
     symbol: '~`!@#$%^&*()_-+={[}]|\:;\"\'<,>.?/'
 };
 
-// ToDo: Make a complete wordlist
-const wordList = {
-    1: ['a', 'b'],
-    2: ['an', 'is', 'on', 'it', 'me', 'he'],
-    3: ['one', 'two', 'six', 'ten', 'she', 'fix'],
-    4: ['zero', 'four', 'five', 'nine'],
-    5: ['three', 'seven', 'eight'],
-    99: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-    999: ['$', '%', '*', '@']
-}
+const wordList = words;
 
 function generatePassword() {
     if (mode_select.checked == true) {
@@ -80,7 +72,7 @@ function toggleSwitches(state) {
             switch_label[i].style.opacity = 1;
         }
 
-        currSelectedOne.disabled = true;
+        // currSelectedOne.disabled = true;
         switch_label[currSelectedOneNum].style.opacity = 0.3;
     }
 }
@@ -173,7 +165,6 @@ function copyToClipboard() {
         el.select();
         document.execCommand('copy');
         document.body.removeChild(el);
-        // alert("Copied: " + el.value);
     } catch (error) {
         console.log(error);
     }
@@ -274,8 +265,8 @@ function generatePassComplex() {
             break;
         }
 
-        var _keyToPassIdx = getPassKeysInt(incl_upper.checked,
-            incl_lower.checked, incl_num.checked, incl_symbol.checked);
+        var _keyToPassIdx = getPassKeysInt(incl_lower.checked,
+            incl_upper.checked, incl_num.checked, incl_symbol.checked);
         // console.log(_keyToPassIdx);
         var _keyToPass = keyToPass[_keyToPassIdx];
         var _passKeys = passKeys[_keyToPass];
@@ -288,7 +279,9 @@ function generatePassComplex() {
         _count--;
     }
 
-    // console.log(password);
     op_bar.value = password;
-    // console.log(incl_upper.checked);
+}
+
+const openLinkInBrowser = (link) => {
+    shell.openExternal(link);
 }
