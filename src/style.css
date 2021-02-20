@@ -39,6 +39,8 @@ body {
   padding-left: 20px;
   font-family: 'Gruppo';
   text-align: left;
+  -webkit-app-region: drag;
+  user-select: auto;
 }
 
 .div-bdy {

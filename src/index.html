@@ -8,12 +8,22 @@
 
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
-    <script defer src="close_win.js"></script>
+
+    <!-- Components - frame-ctrl -->
+    <link rel="stylesheet" href="components/frame-ctrl.css" />
+    <script defer src="components/frame-ctrl.js"></script>
   </head>
   <body onload="generatePassword()">
+    <!-- Frame Controller -->
+    <div class="frame-ctrl">
+      <div class="minimize-ctrl">─</div>
+      <div class="close-ctrl">✗</div>
+    </div>
+
+    <!-- Main App -->
     <div class="div-1">
       <div class="div-hdr">
-        <span>Password Generator</span>
+        <div>Password Generator</div>
       </div>
 
       <div class="div-bdy">

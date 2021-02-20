@@ -10,10 +10,11 @@ const createWindow = () => {
     width: 350,
     height: 540,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      enableRemoteModule: true
     },
     maximizable: false,
-    // frame: false,
+    frame: false,
     resizable: false
   });
 

@@ -1,0 +1,28 @@
+.frame-ctrl {
+  background-color: rgba(255, 0, 0, 0.666);
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  width: 70px;
+  height: 30px;
+  justify-content: center;
+  align-items: stretch;
+  font-size: 120%;
+}
+
+.frame-ctrl > div {
+    display: flex;
+  /* background-color: rgb(70, 70, 18); */
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.frame-ctrl > div:hover {
+    font-size: 110%;
+    cursor: pointer;
+    background-color: rgba(97, 0, 0, 0.747);
+}
