@@ -11,7 +11,11 @@
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\""
   },
-  "keywords": [],
+  "keywords": [
+    "password",
+    "electronjs-app",
+    "password-generator"
+  ],
   "author": {
     "name": "tasnimzotder",
     "email": "hello@tasnim.dev"

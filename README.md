@@ -11,7 +11,7 @@
 
 # password-generator
 
-Password Generator 🔑
+Password Generator 🔑 for desktop computer.
 
 ## Framework
 
